@@ -1,0 +1,10 @@
+master: localhost
+file_client: local
+
+grains:
+    roles:
+        - webserver
+        - database
+    env: dev
+    user: vagrant
+    group: vagrant

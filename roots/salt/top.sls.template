@@ -1,0 +1,17 @@
+base:
+    '*':
+    - packages
+    - php
+    - users
+    #- sipsocial
+    #- splashauth
+
+    'G@roles:webserver':
+    - match: compound
+    #- sipsocial.webserver
+    #- splashauth.webserver
+
+    'G@roles:database':
+    - match: compound
+    #- sipsocial.database
+    #- splashauth.database
