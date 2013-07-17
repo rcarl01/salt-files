@@ -1,6 +1,20 @@
 server {
     server_name {{ grains['fqdn'] }};
     root /home/{{ grains['user'] }}/shared/web;
+	
+	pagespeed on;
+	pagespeed FileCachePath /home/{{ grains['user'] }}/pagespeed_cache;
+	pagespeed FileCacheSizeKb            1020400;
+	pagespeed FileCacheCleanIntervalMs   3600000;
+
+	location ~ /\. {
+		deny all;
+	}
+
+	location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+		expires 1y;
+		log_not_found off;
+	}
 
     location / {
         # try to serve file directly, fallback to rewrite
