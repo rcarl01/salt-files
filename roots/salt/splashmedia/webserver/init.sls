@@ -18,3 +18,13 @@ php5-fpm:
 /etc/nginx/conf.d/example_ssl.conf:
     file:
         - absent
+
+memcached:
+    pkg:
+        - installed
+    service:
+        - running
+
+php5-memcached:
+    pkg:
+        - installed

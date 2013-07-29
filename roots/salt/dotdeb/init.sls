@@ -10,6 +10,7 @@ insert_dotdeb_key:
     - require_in:
       - pkg: php
       - pkg: php5-fpm
+      - pkg: php5-memcached
       - pkg: mysql-server
       - cmd: "apt-get update"
 
