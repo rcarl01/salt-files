@@ -1,10 +1,10 @@
 include:
     - splashmedia.webserver
 
-/etc/nginx/conf.d/splashauth.conf:
+/etc/nginx/conf.d/sipsocial.conf:
     file:
         - managed
-        - source: salt://splashauth/webserver/vhost
+        - source: salt://splashmediau/webserver/vhost
         - template: jinja
         - require:
             - pkg: nginx

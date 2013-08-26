@@ -4,7 +4,7 @@ include:
 /etc/nginx/conf.d/sipsocial.conf:
     file:
         - managed
-        - source: salt://sipsocial/webserver/sipsocial.vhost
+        - source: salt://sipsocial/webserver/vhost
         - template: jinja
         - require:
             - pkg: nginx
