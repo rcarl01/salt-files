@@ -5,13 +5,16 @@ base:
     - users
     #- sipsocial
     #- splashauth
+    #- splashmediau
 
     'G@roles:webserver':
     - match: compound
     #- sipsocial.webserver
     #- splashauth.webserver
+    #- splashmediau.webserver
 
     'G@roles:database':
     - match: compound
     #- sipsocial.database
     #- splashauth.database
+    #- splashmediau.database
