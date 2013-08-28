@@ -2,3 +2,4 @@
 .vagrant
 composer.phar
 roots/salt/top.sls
+minion
