@@ -1,7 +1,7 @@
 include:
     - splashmedia.webserver
 
-/etc/nginx/conf.d/sipsocial.conf:
+/etc/nginx/conf.d/splashmediau.conf:
     file:
         - managed
         - source: salt://splashmediau/webserver/vhost

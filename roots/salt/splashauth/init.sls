@@ -1,2 +1,2 @@
 include:
-    - splashmedia
+    - splashmedia.composer

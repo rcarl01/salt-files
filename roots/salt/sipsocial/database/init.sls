@@ -1,5 +1,6 @@
 include:
     - splashmedia.database
+    - splashmedia.database.doctrine_migrations
 
 extend:
     Create database:
