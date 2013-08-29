@@ -16,25 +16,12 @@ server {
 		log_not_found off;
 	}
 
-    location / {
-        # try to serve file directly, fallback to rewrite
-        try_files $uri @rewriteapp;
-    }
-
-    location @rewriteapp {
-        # rewrite all to app.php
-        rewrite ^(.*)$ /app.php/$1 last;
-    }
-
-    location ~ ^/(app|app_dev|config)\.php(/|$) {
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param HTTPS off;
-        {% if grains['env'] == 'dev' %}
-        fastcgi_param ENVIRONMENT dev;
-        {% endif %}
+    location ~ \.php$ {
+            try_files $uri =404;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index index.php;
+            include fastcgi_params;
     }
 
     error_log /home/{{ grains['user'] }}/error.log;
